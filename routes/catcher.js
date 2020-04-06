@@ -12,7 +12,7 @@ router.all('/', function(req, res, next) {
     'httpVersion': req.httpVersion,
     'originalUrl': req.originalUrl,
     'method': req.method,
-    'body': req.rawBody || "",
+    'body': req.rawBody || "[EMPTY]",
     'headers': req.headers,
   });
 
