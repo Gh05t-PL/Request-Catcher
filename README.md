@@ -7,7 +7,9 @@ Request Catcher
 ### Docker
 If you are using docker provided within this project then it's pretty easy
 
+`$ npm install`
 `$ docker-compose up`
+
 wait till image is built
 
 the end
@@ -17,8 +19,9 @@ the end
 2. download node
 3. download ngrok
 4. navigate to project
-5. `$ npm start` or if you need more logging `$ DEBUG=* npm start`
-6. run ngrok to get reached by outside calls or use public IP
+5. `$ npm install`
+6. `$ npm start` or if you need more logging `$ DEBUG=* npm start`
+7. run ngrok to get reached by outside calls or use public IP
 
 # How it works?
 
