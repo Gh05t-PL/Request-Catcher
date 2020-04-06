@@ -1,67 +1,69 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
-  <div id="no-request">
-    <h1>No request been made yet</h1>
-    <div style="text-align: center;margin: 80px 0 0 0;">
-      <p>Made with <img src="/images/lightsaber.png" alt="Force" style="display: inline;height: 26px;vertical-align: bottom;"> By
-        <a href="https://github.com/Gh05t-PL">
-          <img src="/images/Ghost.svg" alt="Ghost" style="display: inline;height: 26px;vertical-align: bottom;">
-        </a>
-      </p>
-    </div>
-  </div>
-  <div id="requestDashboard" class="grid display-none">
-    <div id="request-list" class="grid-2col" style="margin-bottom: 40px;">
+	<div id="no-request">
+		<h1>No request been made yet</h1>
+		<div style="text-align: center;margin: 80px 0 0 0;">
+			<p>Made with
+				<img src="/images/lightsaber.png" alt="Force" style="display: inline;height: 26px;vertical-align: bottom;"> By
+				<a href="https://github.com/Gh05t-PL">
+					<img src="/images/Ghost.svg" alt="Ghost" style="display: inline;height: 26px;vertical-align: bottom;">
+				</a>
+			</p>
+		</div>
+	</div>
+	<div id="requestDashboard" class="grid display-none">
+		<div id="request-list" class="grid-2col" style="margin-bottom: 40px;">
 
-    </div>
-    <div class="grid-10col">
-      <div>
+		</div>
+		<div class="grid-10col">
+			<div>
 
-        <div style="display: grid">
-          <p>Headers:</p>
-          <pre id="request-headers"></pre>
+				<div style="display: grid">
+					<p>Headers:</p>
+					<pre id="request-headers"></pre>
 
-          <p>Body:</p>
-          <div>
-            <button id="toText">Text</button>
-            <button id="toJson">JSON</button>
-          </div>
-          <div style="display: grid">
-            <pre id="request-body-text" style="margin: 0 0 0 5px; overflow-x: scroll; min-height: 200px;resize: vertical" ></pre>
-            <div id="request-body-json" class="display-none" style="margin: 0 0 0 5px; overflow-x: scroll; min-height: 200px;resize: vertical" ></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
-  <script src="/javascripts/json-formatter/json-formatter.umd.js"></script>
-  <script src="/javascripts/moment/moment.js"></script>
-  <script>
-    const socket = io();
-    const textBody = document.querySelector('#request-body-text');
-    const jsonBody = document.querySelector('#request-body-json');
-    const noRequest = document.querySelector('#no-request');
-    const requestDash = document.querySelector('#requestDashboard');
-    const requestHeaders = document.querySelector('#request-headers');
-    const requestList = document.querySelector('#request-list');
-    var requests = [];
+					<p>Body:</p>
+					<div>
+						<button id="toText">Text</button>
+						<button id="toJson">JSON</button>
+					</div>
+					<div style="display: grid">
+						<pre id="request-body-text" style="margin: 0 0 0 5px; overflow-x: scroll; min-height: 200px;resize: vertical"></pre>
+						<div id="request-body-json" class="display-none" style="margin: 0 0 0 5px; overflow-x: scroll; min-height: 200px;resize: vertical"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+	<script src="/javascripts/json-formatter/json-formatter.umd.js"></script>
+	<script src="/javascripts/moment/moment.js"></script>
+	<script src="/javascripts/utils/helpers.js"></script>
+	<script>
+        const socket = io();
+        const textBody = document.querySelector('#request-body-text');
+        const jsonBody = document.querySelector('#request-body-json');
+        const noRequest = document.querySelector('#no-request');
+        const requestDash = document.querySelector('#requestDashboard');
+        const requestHeaders = document.querySelector('#request-headers');
+        const requestList = document.querySelector('#request-list');
+        var requests = [];
 
-    socket.on('request', (data) => {
-      if ( noRequest.classList.contains('display-none') === false ) {
-        noRequest.classList.add('display-none');
-        requestDash.classList.remove('display-none');
-      }
-      addRequestToList(data);
-      renderView(data);
-    });
+        socket.on('request', (data) => {
+            if (noRequest.classList.contains('display-none') === false) {
+                noRequest.classList.add('display-none');
+                requestDash.classList.remove('display-none');
+            }
+            addRequestToList(data);
+            renderView(data);
+        });
 
-    document.querySelector('#toJson').addEventListener('click', () => {
-      showJsonBody();
-    });
+        document.querySelector('#toJson').addEventListener('click', () => {
+            showJsonBody();
+        });
 
-    document.querySelector('#toText').addEventListener('click', () => {
+        document.querySelector('#toText').addEventListener('click', () => {
             showTextBody();
         });
 	</script>
