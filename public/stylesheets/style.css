@@ -52,3 +52,11 @@ body {
   overflow: hidden;
   white-space: nowrap;
 }
+
+#no-request {
+  text-align: center
+}
+
+#request-headers {
+  margin-left: 5px;
+}
