@@ -8,6 +8,7 @@ Request Catcher
 If you are using docker provided within this project then it's pretty easy
 
 `$ npm install`
+
 `$ docker-compose up`
 
 wait till image is built
