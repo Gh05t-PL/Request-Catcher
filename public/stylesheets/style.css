@@ -1,0 +1,54 @@
+body {
+  font: 15px monospace;
+  padding: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.grid-1col {
+  grid-column: span 1;
+  width: 100%;
+}
+
+.grid-2col {
+  grid-column: span 2;
+  width: 100%;
+}
+
+.grid-3col {
+  grid-column: span 3;
+  width: 100%;
+}
+
+.grid-9col {
+  grid-column: span 9;
+  width: 100%;
+}
+
+.grid-10col {
+  grid-column: span 10;
+  width: 100%;
+}
+
+.display-none {
+  display: none;
+}
+
+.request {
+  cursor: pointer;
+  padding: 0 8px;
+}
+
+.request:hover {
+  background: #1b944882;
+}
+
+.request h2 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
