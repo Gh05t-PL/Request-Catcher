@@ -2,7 +2,14 @@
 
 {% block body %}
   <div id="no-request">
-    <h1 style="text-align: center">No request been made yet</h1>
+    <h1>No request been made yet</h1>
+    <div style="text-align: center;margin: 80px 0 0 0;">
+      <p>Made with <img src="/images/lightsaber.png" alt="Force" style="display: inline;height: 26px;vertical-align: bottom;"> By
+        <a href="https://github.com/Gh05t-PL">
+          <img src="/images/Ghost.svg" alt="Ghost" style="display: inline;height: 26px;vertical-align: bottom;">
+        </a>
+      </p>
+    </div>
   </div>
   <div id="requestDashboard" class="grid display-none">
     <div id="request-list" class="grid-2col" style="margin-bottom: 40px;">
@@ -13,23 +20,17 @@
 
         <div style="display: grid">
           <p>Headers:</p>
-          <pre id="request-headers"  style="margin-left: 5px;">
-            aaaaaaaaaaaaa
-          </pre>
+          <pre id="request-headers"></pre>
 
           <p>Body:</p>
           <div>
             <button id="toText">Text</button>
             <button id="toJson">JSON</button>
           </div>
-          <pre id="request-body-text" style="margin: 0 0 0 5px; overflow-x: scroll; min-height: 200px;resize: vertical" >
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-          </pre>
-          <div id="request-body-json" class="display-none" style="margin: 0 0 0 5px; overflow-x: scroll; min-height: 200px;resize: vertical" >
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+          <div style="display: grid">
+            <pre id="request-body-text" style="margin: 0 0 0 5px; overflow-x: scroll; min-height: 200px;resize: vertical" ></pre>
+            <div id="request-body-json" class="display-none" style="margin: 0 0 0 5px; overflow-x: scroll; min-height: 200px;resize: vertical" ></div>
           </div>
-
         </div>
       </div>
     </div>
