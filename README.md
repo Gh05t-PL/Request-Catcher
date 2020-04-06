@@ -32,5 +32,9 @@ Here is your dashboard where you can inspect all coming request (except request 
 
 to catch request you need to navigate to e.g. `127.0.0.1:3000/test` without exiting dashboard you will be notified in real time that request been called
 
+OR
+
+`$ curl -X POST -d '{ "message": "Hello HTTP!"}' 127.0.0.1:3000/test`
+
 ![](https://i.ibb.co/bW91QNk/image.png)
 ![](https://i.ibb.co/cbFG52S/image.png)
