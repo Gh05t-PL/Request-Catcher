@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 function isNgrok(headers) {
-  return headers.host.includes('ngrok');
+  return headers.host.toLowerCase().includes('ngrok');
 }
 
 /* GET home page. */
