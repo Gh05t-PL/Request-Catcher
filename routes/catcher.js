@@ -14,6 +14,7 @@ router.all('/', function(req, res, next) {
     'method': req.method,
     'body': req.rawBody || "[EMPTY]",
     'headers': req.headers,
+    'ip': req.connection.remoteAddress,
   });
 
   res.send(`Request catched!`);
